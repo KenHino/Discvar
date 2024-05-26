@@ -1,3 +1,4 @@
+[![unittest-poetry](https://github.com/KenHino/Discvar/actions/workflows/unittest-poetry.yml/badge.svg?branch=main)](https://github.com/KenHino/Discvar/actions/workflows/unittest-poetry.yml)
 # Discvar
 
 Discvar is a Python library for discrete variable representation (DVR)
@@ -33,7 +34,7 @@ $ poetry install --with dev
 ```
 If you need only minimum requirements, remove `--with dev`. If you want to install documentation, change it to `--with dev,docs`.
 
-Then, you can use Pompon by
+Then, you can use Discvar by
 ```bash
 $ poetry run python xxx.py
 ```
@@ -41,7 +42,7 @@ or
 ```bash
 $ poetry shell
 $ python
->>> import pompon
+>>> import discvar
 $ exit
 ```
 
