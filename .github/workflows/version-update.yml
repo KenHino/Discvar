@@ -26,7 +26,7 @@ jobs:
     - name: Get discvar version
       # from discvar import __version__; print(__version__)
       id: get_version
-      run: echo "::set-output name=version::$(poetry run python -c 'from discvar import __version__; print(__version__)')"
+      run: echo "version=$(poetry run python -c 'from discvar import __version__; print(__version__)')" >> $GITHUB_OUTPUT 
     - name: Update README.md
       # rename like this: v0.1.10 -> v0.1.11
       # 正規表現でバージョン番号を取得
