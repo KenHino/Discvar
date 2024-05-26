@@ -1,0 +1,41 @@
+name: version-update
+on:
+  push:
+    paths:
+      - 'pyproject.toml'
+      - '.github/workflows/version-update.yml'
+
+jobs:
+  version-update:
+    runs-on: ubuntu-latest
+    permissions:
+        # Give the default GITHUB_TOKEN write permission to commit and push the
+        # added or changed files to the repository.
+        contents: write
+    env:
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    steps:
+    - name: checkout
+      uses: actions/checkout@v3
+    - name: pipx-install
+      run: sudo apt update && sudo apt install pipx && pipx ensurepath
+    - name: poetry-install
+      run: pipx install poetry==$(cat .poetry-version)
+    - name: discvar-install
+      run: poetry install --without dev,docs,test
+    - name: Get discvar version
+      # from discvar import __version__; print(__version__)
+      id: get_version
+      run: echo "::set-output name=version::$(poetry run python -c 'from discvar import __version__; print(__version__)')"
+    - name: Update README.md
+      # rename like this: v0.1.10 -> v0.1.11
+      # 正規表現でバージョン番号を取得
+      run: sed -i "s/v[0-9]\+\.[0-9]\+\.[0-9]\+/v${{ steps.get_version.outputs.version }}/g" README.md
+    - name: Commit and push
+      continue-on-error: true
+      run: |
+        git config --global user.name 'github-actions[bot]'
+        git config --global user.email '41898282+github-actions[bot]@users.noreply.github.com'
+        git add README.md
+        git commit -m "Update README.md"
+        git push
