@@ -1,7 +1,13 @@
 [![unittest-poetry](https://github.com/KenHino/Discvar/actions/workflows/unittest-poetry.yml/badge.svg?branch=main)](https://github.com/KenHino/Discvar/actions/workflows/unittest-poetry.yml)
+![Static Badge](https://img.shields.io/badge/Version-v0.0.0-brightgreen)
+
 # Discvar
 
 Discvar is a Python library for discrete variable representation (DVR)
+
+## Documentation
+
+https://kenhino.github.io/Discvar/
 
 ## Installation
 
