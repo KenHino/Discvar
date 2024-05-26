@@ -1,0 +1,43 @@
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.5.0
+    hooks:
+      - id: no-commit-to-branch
+        args: [--branch, main]
+      - id: check-added-large-files
+        args: ['--maxkb=5000']
+      - id: check-docstring-first
+      - id: check-yaml
+      - id: check-toml
+      - id: end-of-file-fixer
+      - id: trailing-whitespace
+
+  - repo: local
+    hooks:
+      - id: format
+        name: format
+        entry: make fmt
+        language: system
+        pass_filenames: false
+        files: "^(discvar/)"
+
+      - id: fix-lint
+        name: fix-lint
+        entry: make fix-lint
+        language: system
+        pass_filenames: false
+        files: "^(discvar/)"
+
+      - id: typecheck
+        name: mypy
+        entry: make typecheck
+        language: system
+        pass_filenames: false
+        files: "^(discvar/)"
+
+      - id: pytest
+        name: pytest
+        entry: poetry run pytest -n auto
+        language: system
+        pass_filenames: false
+        files: "^(discvar/|tests/)"
