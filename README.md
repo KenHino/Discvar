@@ -1,5 +1,5 @@
 [![unittest-poetry](https://github.com/KenHino/Discvar/actions/workflows/unittest-poetry.yml/badge.svg?branch=main)](https://github.com/KenHino/Discvar/actions/workflows/unittest-poetry.yml)
-![Static Badge](https://img.shields.io/badge/Version-v0.0.0-brightgreen)
+![Static Badge](https://img.shields.io/badge/Version-v0.0.1-brightgreen)
 
 # Discvar
 
