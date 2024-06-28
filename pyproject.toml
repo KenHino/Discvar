@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "discvar"
-version = "0.0.0"
+version = "0.0.1"
 description = "Discrete Variable Representation (DVR) library"
 authors = ["KenHino <hino@theoc.kuchem.kyoto-u.ac.jp>"]
 license = "MIT"
