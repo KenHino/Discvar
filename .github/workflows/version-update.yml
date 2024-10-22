@@ -17,19 +17,16 @@ jobs:
     steps:
     - name: checkout
       uses: actions/checkout@v3
-    - name: pipx-install
-      run: sudo apt update && sudo apt install pipx && pipx ensurepath
-    - name: poetry-install
-      run: pipx install poetry==$(cat .poetry-version)
-    - name: discvar-install
-      run: poetry install --without dev,docs,test
+    - name: uv-install
+      run: curl -LsSf https://astral.sh/uv/install.sh | sh
+    - name: discvar-dev-install
+      run: uv sync
     - name: Get discvar version
       # from discvar import __version__; print(__version__)
       id: get_version
-      run: echo "version=$(poetry run python -c 'from discvar import __version__; print(__version__)')" >> $GITHUB_OUTPUT 
+      run: echo "version=$(uv run python -c 'from discvar import __version__; print(__version__)')" >> $GITHUB_OUTPUT
     - name: Update README.md
       # rename like this: v0.1.10 -> v0.1.11
-      # 正規表現でバージョン番号を取得
       run: sed -i "s/v[0-9]\+\.[0-9]\+\.[0-9]\+/v${{ steps.get_version.outputs.version }}/g" README.md
     - name: Commit and push
       continue-on-error: true
