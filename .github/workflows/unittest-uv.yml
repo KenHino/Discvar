@@ -1,4 +1,4 @@
-name: unittest-poetry
+name: unittest
 on:
   push:
     paths:

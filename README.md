@@ -49,22 +49,17 @@ https://kenhino.github.io/Discvar/
     $ uv run jupyter lab
     ```
 
-### Testing
+    ```bash
+    $ cd tests/build
+    $ uv run pytest ..
+    ```
 
-```bash
-$ cd tests/build
-$ uv run pytest ..
-```
+    You should install pre-commit hooks including ruff formatting and linting, mypy type checking, pytest testing, and so on.
+    ```bash
+    $ uv run pre-commit install
+    $ git add .
+    $ uv run pre-commit
+    ```
+    Before push, you must fix problems!!
 
-
-### For developers
-
-You should install pre-commit hooks including ruff formatting and linting, mypy type checking, pytest testing, and so on.
-```bash
-$ uv run pre-commit install
-$ git add .
-$ uv run pre-commit
-```
-Before push, you must fix problems!!
-
-Please feel free to give us feedback or pull requests.
+    Please feel free to give us feedback or pull requests.
