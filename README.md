@@ -1,5 +1,5 @@
 [![unittest-uv](https://github.com/KenHino/Discvar/actions/workflows/unittest-uv.yml/badge.svg?branch=main)](https://github.com/KenHino/Discvar/actions/workflows/unittest-uv.yml)
-![Static Badge](https://img.shields.io/badge/Version-v0.0.1-brightgreen)
+![Static Badge](https://img.shields.io/badge/Version-v0.0.2-brightgreen)
 
 # Discvar
 
