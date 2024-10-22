@@ -42,7 +42,7 @@ jobs:
             uv run sphinx-apidoc -f -o docs discvar
             uv run sphinx-build -a docs docs/_build
       - name: Setup Pages
-        uses: actions/configure-pages@v3
+        uses: actions/configure-pages@v5
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         with:
