@@ -7,6 +7,7 @@ Quick Start Examples
    :maxdepth: 1
 
    visualize_basis.ipynb
+   eigenstate.ipynb
 
 Indices and tables
 

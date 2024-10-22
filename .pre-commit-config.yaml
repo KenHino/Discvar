@@ -16,28 +16,28 @@ repos:
     hooks:
       - id: format
         name: format
-        entry: make fmt
+        entry: uv run ruff format .
         language: system
         pass_filenames: false
         files: "^(discvar/)"
 
       - id: fix-lint
         name: fix-lint
-        entry: make fix-lint
+        entry: uv run ruff check --fix .
         language: system
         pass_filenames: false
         files: "^(discvar/)"
 
       - id: typecheck
         name: mypy
-        entry: make typecheck
+        entry: uv run mypy --install-types --non-interactive discvar
         language: system
         pass_filenames: false
         files: "^(discvar/)"
 
       - id: pytest
         name: pytest
-        entry: poetry run pytest -n auto
+        entry: cd tests/build && uv run pytest -n auto ..
         language: system
         pass_filenames: false
         files: "^(discvar/|tests/)"

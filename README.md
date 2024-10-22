@@ -1,7 +1,8 @@
-[![unittest-poetry](https://github.com/KenHino/Discvar/actions/workflows/unittest-poetry.yml/badge.svg?branch=main)](https://github.com/KenHino/Discvar/actions/workflows/unittest-poetry.yml)
-![Static Badge](https://img.shields.io/badge/Version-v0.0.1-brightgreen)
+[![unittest](https://github.com/KenHino/Discvar/actions/workflows/unittest-uv.yml/badge.svg?branch=main)](https://github.com/KenHino/Discvar/actions/workflows/unittest-uv.yml)
+![Static Badge](https://img.shields.io/badge/Version-v0.0.2-brightgreen)
 
 # Discvar
+![](docs/notebook/wavepacket.gif)
 
 Discvar is a Python library for discrete variable representation (DVR)
 
@@ -11,66 +12,55 @@ https://kenhino.github.io/Discvar/
 
 ## Installation
 
-Clone this repository to your local environment;
+### Minimum runtime
+- The easiest way to install `discvar` is to use `pip`.
 
-```bash
-$ git clone https://github.com/KenHino/Discvar.git
-$ cd Discvar
-```
+    For instance, prepare Python 3.10 or later and execute
 
-Before installation, please make sure you have the following requirements:
+    ```bash
+    $ python -m venv discvar-env
+    $ source discvar-env/bin/activate
+    $ pip install git+https://github.com/KenHino/Discvar
+    ```
 
-- Python 3.10 or later
-  If you don't have Python, you can install it by e.g. [pyenv](https://github.com/pyenv/pyenv?tab=readme-ov-file#installation).
-  ```bash
-  $ pyenv install $(cat .python-version)
-  ```
+### For developing
+- we recommend install `pompon` from source using [`uv`](https://docs.astral.sh/uv/)
 
-- [pipx](https://github.com/pypa/pipx)
-  > pip is a general-purpose package installer for both libraries and apps with no environment isolation. pipx is made specifically for application installation, as it adds isolation yet still makes the apps available in your shell: pipx creates an isolated environment for each application and its associated packages.
+    ```bash
+    $ git clone https://github.com/KenHino/Discvar.git
+    $ cd Discvar
+    $ uv version
+    uv 0.4.18 (7b55e9790 2024-10-01)
+    $ uv sync
+    ```
 
-- [poetry](https://python-poetry.org/)
-  ```bash
-  $ pipx install poetry==$(cat .poetry-version)
-  ```
+    Then, you can execute `discvar` by
+    ```bash
+    $ uv run python xxx.py
+    ```
+    or
+    ```bash
+    $ souce .venv/bin/activate
+    $ python
+    >>> import pompon
+    ```
 
-Install by poetry;
-```bash
-$ poetry install --with dev
-```
-If you need only minimum requirements, remove `--with dev`. If you want to install documentation, change it to `--with dev,docs`.
+    For jupyter notebook tutorials, you can use
+    ```bash
+    $ uv run jupyter lab
+    ```
 
-Then, you can use Discvar by
-```bash
-$ poetry run python xxx.py
-```
-or
-```bash
-$ poetry shell
-$ python
->>> import discvar
-$ exit
-```
+    ```bash
+    $ cd tests/build
+    $ uv run pytest ..
+    ```
 
-### F.Y.I.,
+    You should install pre-commit hooks including ruff formatting and linting, mypy type checking, pytest testing, and so on.
+    ```bash
+    $ uv run pre-commit install
+    $ git add .
+    $ uv run pre-commit
+    ```
+    Before push, you must fix problems!!
 
-`pytest` is also installed by `poetry install --with dev`.
-```bash
-$ poetry run pytest
-```
-
-
-### For developers,
-
-you should install pre-commit hooks.
-```bash
-$ poetry run pre-commit install
-$ git add .
-$ poetry run pre-commit
-```
-Before push you must fix problems!!
-
-```bash
-$ make
-```
-also support you.
+    Please feel free to give us feedback or pull requests.
