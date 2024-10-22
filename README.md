@@ -1,7 +1,8 @@
-[![unittest-uv](https://github.com/KenHino/Discvar/actions/workflows/unittest-uv.yml/badge.svg?branch=main)](https://github.com/KenHino/Discvar/actions/workflows/unittest-uv.yml)
+[![unittest](https://github.com/KenHino/Discvar/actions/workflows/unittest-uv.yml/badge.svg?branch=main)](https://github.com/KenHino/Discvar/actions/workflows/unittest-uv.yml)
 ![Static Badge](https://img.shields.io/badge/Version-v0.0.2-brightgreen)
 
 # Discvar
+![](docs/notebook/wavepacket.gif)
 
 Discvar is a Python library for discrete variable representation (DVR)
 
