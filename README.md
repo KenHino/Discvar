@@ -1,5 +1,5 @@
 [![unittest](https://github.com/KenHino/Discvar/actions/workflows/unittest-uv.yml/badge.svg?branch=main)](https://github.com/KenHino/Discvar/actions/workflows/unittest-uv.yml)
-![Static Badge](https://img.shields.io/badge/Version-v0.0.2-brightgreen)
+![Static Badge](https://img.shields.io/badge/Version-v0.0.3-brightgreen)
 [![uv](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/astral-sh/uv/main/assets/badge/v0.json)](https://github.com/astral-sh/uv)
 
 
