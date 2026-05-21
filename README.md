@@ -26,7 +26,7 @@ https://kenhino.github.io/Discvar/
     ```
 
 ### For developing
-- we recommend install `pompon` from source using [`uv`](https://docs.astral.sh/uv/)
+- we recommend install `discvar` from source using [`uv`](https://docs.astral.sh/uv/)
 
     ```bash
     $ git clone https://github.com/KenHino/Discvar.git
@@ -42,9 +42,9 @@ https://kenhino.github.io/Discvar/
     ```
     or
     ```bash
-    $ souce .venv/bin/activate
+    $ source .venv/bin/activate
     $ python
-    >>> import pompon
+    >>> import discvar
     ```
 
     For jupyter notebook tutorials, you can use
