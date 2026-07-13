@@ -17,7 +17,7 @@ build-backend = "hatchling.build"
 [dependency-groups]
 dev = [
     "jupyterlab>=4.2.5",
-    "mypy>=2.1.0",
+    "mypy>=2.2.0",
     "myst-parser>=4.0.0",
     "nbsphinx>=0.9.5",
     "pre-commit>=4.6.0",
