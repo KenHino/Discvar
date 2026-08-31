@@ -1,6 +1,6 @@
 import functools
 from abc import ABC, abstractmethod
-from typing import Any, Callable
+from typing import Callable
 
 import matplotlib.pyplot as plt
 import numpy as np
@@ -50,7 +50,7 @@ class DVRPrimitivesMixin(ABC):
 
         """
         if not hasattr(self, "pos_rep_matrix"):
-            self.pos_rep_matrix: np.ndarray[Any, np.dtype[np.bool_]] = np.zeros(
+            self.pos_rep_matrix: np.ndarray = np.zeros(
                 (self.ngrid, self.ngrid), dtype=np.complex128
             )
             avg_error = 0.0

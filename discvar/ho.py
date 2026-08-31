@@ -186,7 +186,11 @@ class HarmonicOscillator(DVRPrimitivesMixin):
 
     def diagnalize_pos_rep_matrix(self):
         """Analytical formulation has not yet derived."""
-        return super().diagnalize_pos_rep_matrix()
+        super().diagnalize_pos_rep_matrix()
+
+        rel = np.asarray(self.grids, dtype=float) - self.q_eq
+        rel = 0.5 * (rel - rel[::-1])
+        self.grids = list(self.q_eq + rel)
 
     def get_ovi_CS_HO(
         self, p: float, q: float, type: str = "DVR"
